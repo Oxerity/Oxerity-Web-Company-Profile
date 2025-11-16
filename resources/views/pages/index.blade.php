@@ -276,153 +276,126 @@
     </section>
 
     <!-- Testimonials Section -->
-    <section class="py-24 bg-gradient-to-br from-sky-50 to-green-50 dark:from-gray-800 dark:to-gray-900">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-4xl md:text-5xl font-extrabold mb-4">
-                    <span
-                        class="bg-gradient-to-r from-sky-600 to-green-600 dark:from-sky-400 dark:to-green-400 bg-clip-text text-transparent">
-                        Kata Mereka
-                    </span>
-                </h2>
-                <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-                    Dengar pengalaman dari para pelaku UMKM yang telah bertransformasi bersama kami
-                </p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Testimonial 1 -->
-                <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl" data-aos="fade-up" data-aos-delay="0">
-                    <div class="flex items-center mb-4">
-                        <div class="flex text-yellow-400">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                                <path
-                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
-                                </path>
-                            </svg>
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                                <path
-                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
-                                </path>
-                            </svg>
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                                <path
-                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
-                                </path>
-                            </svg>
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                                <path
-                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
-                                </path>
-                            </svg>
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                                <path
-                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
-                                </path>
-                            </svg>
-                        </div>
-                    </div>
-                    <p class="text-gray-600 dark:text-gray-400 mb-6 italic">
-                        "Oxerity Corp sangat membantu bisnis saya berkembang pesat. Dalam 6 bulan, penjualan online
-                        meningkat 300%!"
-                    </p>
-                    <div class="flex items-center">
-                        <div class="w-12 h-12 bg-gradient-to-br from-sky-400 to-green-400 rounded-full mr-4"></div>
-                        <div>
-                            <h4 class="font-bold text-gray-800 dark:text-white">Budi Santoso</h4>
-                            <p class="text-sm text-gray-600 dark:text-gray-400">Pemilik Toko Kerajinan</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Testimonial 2 -->
-                <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl" data-aos="fade-up"
-                    data-aos-delay="100">
-                    <div class="flex items-center mb-4">
-                        <div class="flex text-yellow-400">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                                <path
-                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
-                                </path>
-                            </svg>
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                                <path
-                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
-                                </path>
-                            </svg>
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                                <path
-                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
-                                </path>
-                            </svg>
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                                <path
-                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
-                                </path>
-                            </svg>
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                                <path
-                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
-                                </path>
-                            </svg>
-                        </div>
-                    </div>
-                    <p class="text-gray-600 dark:text-gray-400 mb-6 italic">
-                        "Tim yang sangat responsif dan profesional. Mereka benar-benar memahami kebutuhan bisnis kami."
-                    </p>
-                    <div class="flex items-center">
-                        <div class="w-12 h-12 bg-gradient-to-br from-green-400 to-sky-400 rounded-full mr-4"></div>
-                        <div>
-                            <h4 class="font-bold text-gray-800 dark:text-white">Siti Rahma</h4>
-                            <p class="text-sm text-gray-600 dark:text-gray-400">Owner Kuliner Online</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Testimonial 3 -->
-                <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl" data-aos="fade-up"
-                    data-aos-delay="200">
-                    <div class="flex items-center mb-4">
-                        <div class="flex text-yellow-400">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                                <path
-                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
-                                </path>
-                            </svg>
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                                <path
-                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
-                                </path>
-                            </svg>
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                                <path
-                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
-                                </path>
-                            </svg>
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                                <path
-                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
-                                </path>
-                            </svg>
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                                <path
-                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
-                                </path>
-                            </svg>
-                        </div>
-                    </div>
-                    <p class="text-gray-600 dark:text-gray-400 mb-6 italic">
-                        "Pelatihan yang diberikan sangat aplikatif. Sekarang saya bisa kelola bisnis digital sendiri
-                        dengan percaya diri."
-                    </p>
-                    <div class="flex items-center">
-                        <div class="w-12 h-12 bg-gradient-to-br from-sky-400 to-green-400 rounded-full mr-4"></div>
-                        <div>
-                            <h4 class="font-bold text-gray-800 dark:text-white">Ahmad Rifai</h4>
-                            <p class="text-sm text-gray-600 dark:text-gray-400">Pengusaha Fashion</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<!-- Testimonials Section -->
+<section class="py-24 bg-gradient-to-br from-sky-50 to-green-50 dark:from-gray-800 dark:to-gray-900">
+    <div class="container mx-auto px-6">
+
+        <div class="text-center mb-16" data-aos="fade-up">
+            <h2 class="text-4xl md:text-5xl font-extrabold mb-4">
+                <span class="bg-gradient-to-r from-sky-600 to-green-600 dark:from-sky-400 dark:to-green-400 bg-clip-text text-transparent">
+                    Kata Mereka
+                </span>
+            </h2>
+            <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                Dengar pengalaman dari para pelaku UMKM yang telah bertransformasi bersama kami
+            </p>
         </div>
-    </section>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            @foreach($testimonials as $i => $t)
+                <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl"
+                     data-aos="fade-up" data-aos-delay="{{ $i * 100 }}">
+
+                    <!-- Stars -->
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            @for ($s = 1; $s <= $t->rating; $s++)
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921
+                                        1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969
+                                        0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0
+                                        00-.364 1.118l1.07 3.292c.3.921-.755
+                                        1.688-1.54 1.118l-2.8-2.034a1 1 0
+                                        00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118
+                                        l1.07-3.292a1 1 0 00-.364-1.118L2.98
+                                        8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1
+                                        0 00.951-.69l1.07-3.292z"/>
+                                </svg>
+                            @endfor
+                        </div>
+                    </div>
+
+                    <!-- Description -->
+                    <p class="text-gray-600 dark:text-gray-400 mb-6 italic">
+                        "{{ $t->message }}"
+                    </p>
+
+                    <!-- Avatar + Name -->
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 rounded-full mr-4
+                            bg-gradient-to-br from-sky-400 to-green-400
+                            flex items-center justify-center
+                            text-white font-bold text-lg leading-none select-none">
+                            <span class="block">{{ chr(65 + $i) }}</span>
+                        </div>
+
+                        <div>
+                            <h4 class="font-bold text-gray-800 dark:text-white">{{ $t->name }}</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">{{ $t->role }}</p>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+
+
+    </div>
+</section>
+
+
+
+
+
+    <section class="py-20 bg-white dark:bg-gray-900">
+    <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+            @foreach ($testimonials as $t)
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700"
+                     data-aos="fade-up" data-aos-delay="{{ $loop->index * 100 }}">
+
+                    {{-- Bintang 5 --}}
+                    <div class="flex text-yellow-400 mb-4">
+                        @for ($i = 0; $i < $t->rating; $i++)
+                            <svg class="w-6 h-6 fill-current" viewBox="0 0 20 20">
+                                <path
+                                    d="M9 15l-5.878 3.09L5.64 11.545.64 7.41l6.09-.885L10 1l3.27 5.526 6.09.884-5 4.136 1.518 6.545z">
+                                </path>
+                            </svg>
+                        @endfor
+                    </div>
+
+                    {{-- Pesan --}}
+                    <p class="text-gray-700 dark:text-gray-300 text-lg mb-4">
+                        {{ $t->message }}
+                    </p>
+
+                    {{-- Profil --}}
+                    <div class="flex items-center">
+                        {{-- Avatar (jika ada), jika tidak pakai gradient bawaan --}}
+                        @if ($t->avatar)
+                            <img src="{{ asset('storage/' . $t->avatar) }}"
+                                class="w-12 h-12 rounded-full object-cover border-2 border-sky-500" />
+                        @else
+                            <div
+                                class="w-12 h-12 rounded-full bg-gradient-to-r from-sky-500 to-green-500 flex items-center justify-center text-white text-xl font-bold">
+                                {{ strtoupper(substr($t->name, 0, 1)) }}
+                            </div>
+                        @endif
+
+                        <div class="ml-4">
+                            <h4 class="font-bold text-gray-800 dark:text-white">{{ $t->name }}</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">{{ $t->role }}</p>
+                        </div>
+                    </div>
+
+                </div>
+            @endforeach
+
+        </div>
+    </div>
+</section>
+
 
     <!-- Contact Section -->
     <section id="contact" class="py-24 bg-white dark:bg-gray-900">
