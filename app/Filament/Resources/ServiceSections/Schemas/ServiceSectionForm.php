@@ -27,7 +27,7 @@ class ServiceSectionForm
                 Textarea::make('description')
                     ->label('Description')
                     ->required()
-                    ->rows(4)
+                    ->rows(2)
                     ->columnSpanFull()
                     ->maxLength(255),
 

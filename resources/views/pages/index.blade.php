@@ -101,33 +101,20 @@
     <section class="py-20 bg-white dark:bg-gray-900">
         <div class="container mx-auto px-6">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-                <div class="text-center" data-aos="fade-up" data-aos-delay="0">
-                    <div
-                        class="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-sky-600 to-green-600 bg-clip-text text-transparent mb-2">
-                        500+</div>
-                    <div class="text-gray-600 dark:text-gray-400 font-medium">UMKM Terbantu</div>
-                </div>
-                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
-                    <div
-                        class="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-sky-600 to-green-600 bg-clip-text text-transparent mb-2">
-                        98%</div>
-                    <div class="text-gray-600 dark:text-gray-400 font-medium">Tingkat Kepuasan</div>
-                </div>
-                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
-                    <div
-                        class="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-sky-600 to-green-600 bg-clip-text text-transparent mb-2">
-                        50+</div>
-                    <div class="text-gray-600 dark:text-gray-400 font-medium">Kota di Indonesia</div>
-                </div>
-                <div class="text-center" data-aos="fade-up" data-aos-delay="300">
-                    <div
-                        class="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-sky-600 to-green-600 bg-clip-text text-transparent mb-2">
-                        24/7</div>
-                    <div class="text-gray-600 dark:text-gray-400 font-medium">Dukungan Pelanggan</div>
-                </div>
+                @foreach ($stats as $stat)
+                    <div class="text-center" data-aos="fade-up">
+                        <div class="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-sky-600 to-green-600 bg-clip-text text-transparent mb-2">
+                            {{ $stat->title }}
+                        </div>
+                        <div class="text-gray-600 dark:text-gray-400 font-medium">
+                            {{ $stat->subtitle }}
+                        </div>
+                    </div>
+                @endforeach
             </div>
         </div>
     </section>
+
 
     <!-- Services Section -->
     <section id="services" class="py-24 relative overflow-hidden">

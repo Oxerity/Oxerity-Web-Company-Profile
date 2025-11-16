@@ -20,7 +20,7 @@ class HeroSectionResource extends Resource
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
-    protected static ?string $recordTitleAttribute = 'title_primary';
+    protected static ?string $recordTitleAttribute = 'badge_text';
 
     public static function form(Schema $schema): Schema
     {

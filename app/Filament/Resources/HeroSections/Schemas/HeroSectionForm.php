@@ -13,12 +13,15 @@ class HeroSectionForm
     {
         return $schema
             ->components([
-                TextInput::make('badge_text'),
+                TextInput::make('badge_text')
+                    ->required()
+                    ->columnSpanFull(),
                 TextInput::make('title_primary')
                     ->required(),
                 TextInput::make('title_secondary'),
                 Textarea::make('description')
-                    ->columnSpanFull(),
+                    ->required()
+                    ->rows(4),
                 FileUpload::make('image')
                     ->image()
                     ->directory('hero')
