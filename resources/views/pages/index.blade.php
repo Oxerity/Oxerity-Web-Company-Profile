@@ -16,59 +16,85 @@
             </div>
         </div>
 
-        <div class="container mx-auto px-6 relative z-10">
-            <div class="flex flex-col lg:flex-row items-center justify-between">
-                <div class="lg:w-1/2 text-center lg:text-left mb-12 lg:mb-0" data-aos="fade-right">
-                    <div
-                        class="inline-block mb-4 px-4 py-2 bg-green-100 dark:bg-green-900/30 rounded-full text-green-700 dark:text-green-300 text-sm font-semibold">
-                        🚀 Solusi Digital untuk UMKM
-                    </div>
-                    <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-6">
-                        <span
-                            class="bg-gradient-to-r from-sky-600 via-blue-600 to-green-600 dark:from-sky-400 dark:via-blue-400 dark:to-green-400 bg-clip-text text-transparent">
-                            Membawa UMKM
-                        </span>
-                        <br>
-                        <span class="text-gray-800 dark:text-white">
-                            ke Era Digital
-                        </span>
-                    </h1>
-                    <p class="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto lg:mx-0">
-                        Transformasi digital yang mudah dan terjangkau. Kami membantu UMKM berkembang melalui teknologi
-                        inovatif dan pendampingan berkelanjutan.
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                        <a href="#services"
-                            class="group relative inline-flex items-center justify-center px-8 py-4 font-bold text-white transition-all duration-200 bg-gradient-to-r from-sky-500 to-green-500 rounded-full hover:shadow-2xl hover:shadow-sky-500/50 hover:scale-105">
-                            Mulai Sekarang
-                            <svg class="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" fill="none"
-                                stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-                            </svg>
-                        </a>
-                        <a href="#about"
-                            class="group inline-flex items-center justify-center px-8 py-4 font-bold text-gray-800 dark:text-white bg-white dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-600 rounded-full hover:border-sky-500 dark:hover:border-sky-400 hover:shadow-xl transition-all duration-200">
-                            Pelajari Lebih Lanjut
-                            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                            </svg>
-                        </a>
-                    </div>
+        @php
+        $hero = $hero ?? null;
+    @endphp
+
+    @if ($hero)
+    <div class="container mx-auto px-6 relative z-10">
+        <div class="flex flex-col lg:flex-row items-center justify-between">
+
+            {{-- LEFT SECTION --}}
+            <div class="lg:w-1/2 text-center lg:text-left mb-12 lg:mb-0" data-aos="fade-right">
+
+                {{-- BADGE --}}
+                @if ($hero->badge_text)
+                <div
+                    class="inline-block mb-4 px-4 py-2 bg-green-100 dark:bg-green-900/30 rounded-full text-green-700 dark:text-green-300 text-sm font-semibold">
+                    {{ $hero->badge_text }}
                 </div>
-                <div class="lg:w-1/2" data-aos="fade-left">
-                    <div class="relative">
-                        <div
-                            class="absolute inset-0 bg-gradient-to-r from-sky-400 to-green-400 rounded-3xl transform rotate-6 scale-105 opacity-20">
-                        </div>
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop"
-                            alt="Digital Transformation" class="relative rounded-3xl shadow-2xl">
-                    </div>
+                @endif
+
+                {{-- TITLE --}}
+                <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-6">
+                    <span
+                        class="bg-gradient-to-r from-sky-600 via-blue-600 to-green-600 dark:from-sky-400 dark:via-blue-400 dark:to-green-400 bg-clip-text text-transparent">
+                        {{ $hero->title_primary }}
+                    </span>
+                    <br>
+                    <span class="text-gray-800 dark:text-white">
+                        {{ $hero->title_secondary }}
+                    </span>
+                </h1>
+
+                {{-- DESCRIPTION --}}
+                @if ($hero->description)
+                <p class="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto lg:mx-0">
+                    {{ $hero->description }}
+                </p>
+                @endif
+
+                {{-- BUTTONS --}}
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                    <a href="#services"
+                        class="group relative inline-flex items-center justify-center px-8 py-4 font-bold text-white transition-all duration-200 bg-gradient-to-r from-sky-500 to-green-500 rounded-full hover:shadow-2xl hover:shadow-sky-500/50 hover:scale-105">
+                        Mulai Sekarang
+                        <svg class="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                        </svg>
+                    </a>
+
+                    <a href="#about"
+                        class="group inline-flex items-center justify-center px-8 py-4 font-bold text-gray-800 dark:text-white bg-white dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-600 rounded-full hover:border-sky-500 dark:hover:border-sky-400 hover:shadow-xl transition-all duration-200">
+                        Pelajari Lebih Lanjut
+                        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                    </a>
                 </div>
             </div>
+
+            {{-- RIGHT IMAGE --}}
+            <div class="lg:w-1/2" data-aos="fade-left">
+                <div class="relative">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-sky-400 to-green-400 rounded-3xl transform rotate-6 scale-105 opacity-20">
+                    </div>
+
+                    @if ($hero && $hero->image)
+                        <img src="{{ asset('storage/' . $hero->image) }}"
+                            alt="Hero Image"
+                            class="relative rounded-3xl shadow-2xl">
+                    @endif
+                </div>
+            </div>
+
         </div>
+    </div>
+    @endif
     </section>
 
     <!-- Stats Section -->
