@@ -120,152 +120,51 @@
                 </p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Service Card 1 -->
-                <div class="group relative" data-aos="fade-up" data-aos-delay="0">
-                    <div
-                        class="absolute inset-0 bg-gradient-to-r from-sky-400 to-green-400 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-500">
-                    </div>
-                    <div
-                        class="relative bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700 h-full">
+                @foreach ($services as $service)
+                    <div class="group relative" data-aos="fade-up" data-aos-delay="{{ $loop->index * 100 }}">
                         <div
-                            class="w-16 h-16 bg-gradient-to-br from-sky-400 to-green-400 rounded-xl flex items-center justify-center mb-6 transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
-                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9V3m0 18a9 9 0 009-9m-9 9a9 9 0 00-9-9">
-                                </path>
-                            </svg>
+                            class="absolute inset-0 bg-gradient-to-r from-sky-400 to-green-400 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-500">
                         </div>
-                        <h3 class="text-2xl font-bold mb-3 text-gray-800 dark:text-white">Digitalisasi UMKM</h3>
-                        <p class="text-gray-600 dark:text-gray-400 mb-6">
-                            Solusi lengkap untuk membawa bisnis Anda online, mulai dari pembuatan website, toko online,
-                            hingga integrasi sistem pembayaran digital.
-                        </p>
-                        <ul class="space-y-2">
-                            <li class="flex items-center text-sm text-gray-600 dark:text-gray-400">
-                                <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd"
-                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                        clip-rule="evenodd"></path>
-                                </svg>
-                                Website Professional
-                            </li>
-                            <li class="flex items-center text-sm text-gray-600 dark:text-gray-400">
-                                <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd"
-                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                        clip-rule="evenodd"></path>
-                                </svg>
-                                E-Commerce Platform
-                            </li>
-                            <li class="flex items-center text-sm text-gray-600 dark:text-gray-400">
-                                <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd"
-                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                        clip-rule="evenodd"></path>
-                                </svg>
-                                Payment Gateway
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- Service Card 2 -->
-                <div class="group relative" data-aos="fade-up" data-aos-delay="100">
-                    <div
-                        class="absolute inset-0 bg-gradient-to-r from-green-400 to-sky-400 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-500">
-                    </div>
-                    <div
-                        class="relative bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700 h-full">
+
                         <div
-                            class="w-16 h-16 bg-gradient-to-br from-green-400 to-sky-400 rounded-xl flex items-center justify-center mb-6 transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
-                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                            </svg>
+                            class="relative bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700 h-full">
+
+                            {{-- ICON --}}
+                            <div
+                                class="w-16 h-16 bg-gradient-to-br from-sky-400 to-green-400 rounded-xl flex items-center justify-center mb-6 transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
+                                {!! $service->icon !!}
+                            </div>
+
+                            {{-- TITLE --}}
+                            <h3 class="text-2xl font-bold mb-3 text-gray-800 dark:text-white">
+                                {{ $service->title }}
+                            </h3>
+
+                            {{-- DESCRIPTION --}}
+                            <p class="text-gray-600 dark:text-gray-400 mb-6">
+                                {{ $service->description }}
+                            </p>
+
+                            {{-- LIST FEATURES --}}
+                            @if ($service->features)
+                            <ul class="space-y-2">
+                                @foreach ($service->features as $feature)
+                                    <li class="flex items-center text-sm text-gray-600 dark:text-gray-400">
+                                        <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd"
+                                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                                clip-rule="evenodd">
+                                            </path>
+                                        </svg>
+
+                                        {{ $feature }}
+                                    </li>
+                                @endforeach
+                            </ul>
+                        @endif
                         </div>
-                        <h3 class="text-2xl font-bold mb-3 text-gray-800 dark:text-white">Pemberdayaan Digital</h3>
-                        <p class="text-gray-600 dark:text-gray-400 mb-6">
-                            Pelatihan dan pendampingan komprehensif untuk meningkatkan literasi digital, strategi
-                            marketing, dan manajemen bisnis modern.
-                        </p>
-                        <ul class="space-y-2">
-                            <li class="flex items-center text-sm text-gray-600 dark:text-gray-400">
-                                <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd"
-                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                        clip-rule="evenodd"></path>
-                                </svg>
-                                Digital Marketing Training
-                            </li>
-                            <li class="flex items-center text-sm text-gray-600 dark:text-gray-400">
-                                <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd"
-                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                        clip-rule="evenodd"></path>
-                                </svg>
-                                Business Mentoring
-                            </li>
-                            <li class="flex items-center text-sm text-gray-600 dark:text-gray-400">
-                                <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd"
-                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                        clip-rule="evenodd"></path>
-                                </svg>
-                                Social Media Strategy
-                            </li>
-                        </ul>
                     </div>
-                </div>
-                <!-- Service Card 3 -->
-                <div class="group relative" data-aos="fade-up" data-aos-delay="200">
-                    <div
-                        class="absolute inset-0 bg-gradient-to-r from-sky-400 to-green-400 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-500">
-                    </div>
-                    <div
-                        class="relative bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700 h-full">
-                        <div
-                            class="w-16 h-16 bg-gradient-to-br from-sky-400 to-green-400 rounded-xl flex items-center justify-center mb-6 transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
-                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z">
-                                </path>
-                            </svg>
-                        </div>
-                        <h3 class="text-2xl font-bold mb-3 text-gray-800 dark:text-white">Analitik & Strategi</h3>
-                        <p class="text-gray-600 dark:text-gray-400 mb-6">
-                            Manfaatkan kekuatan data untuk pertumbuhan bisnis. Kami menyediakan layanan analitik
-                            mendalam untuk keputusan yang lebih tepat.
-                        </p>
-                        <ul class="space-y-2">
-                            <li class="flex items-center text-sm text-gray-600 dark:text-gray-400">
-                                <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd"
-                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                        clip-rule="evenodd"></path>
-                                </svg>
-                                Business Analytics
-                            </li>
-                            <li class="flex items-center text-sm text-gray-600 dark:text-gray-400">
-                                <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd"
-                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                        clip-rule="evenodd"></path>
-                                </svg>
-                                Market Research
-                            </li>
-                            <li class="flex items-center text-sm text-gray-600 dark:text-gray-400">
-                                <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd"
-                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                        clip-rule="evenodd"></path>
-                                </svg>
-                                Performance Tracking
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>
