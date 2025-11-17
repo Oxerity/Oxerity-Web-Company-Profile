@@ -185,60 +185,127 @@
     <!-- About Section -->
     <section id="about" class="py-24 bg-white dark:bg-gray-900">
         <div class="container mx-auto px-6">
+            @if($about)
             <div class="flex flex-col lg:flex-row items-center gap-12">
+                <!-- Image Section -->
                 <div class="lg:w-1/2" data-aos="fade-right">
                     <div class="relative">
-                        <div
-                            class="absolute -inset-4 bg-gradient-to-r from-sky-400 to-green-400 rounded-3xl blur-2xl opacity-20">
+                        <div class="absolute -inset-4 bg-gradient-to-r from-sky-400 to-green-400 rounded-3xl blur-2xl opacity-20">
                         </div>
-                        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=2084&auto=format&fit=crop"
-                            alt="Team working together" class="relative rounded-3xl shadow-2xl">
+
+                        @if($about->main_image)
+                            <img src="{{ asset('storage/' . $about->main_image) }}"
+                                 alt="{{ $about->title }}"
+                                 class="relative rounded-3xl shadow-2xl w-full h-auto object-cover">
+                        @else
+                            <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=2084&auto=format&fit=crop"
+                                 alt="Team working together"
+                                 class="relative rounded-3xl shadow-2xl">
+                        @endif
+
+                        <!-- Experience Badge -->
                         <div class="absolute -bottom-6 -right-6 bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-xl">
                             <div class="flex items-center space-x-3">
-                                <div
-                                    class="w-12 h-12 bg-gradient-to-br from-sky-400 to-green-400 rounded-full flex items-center justify-center">
-                                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor"
-                                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M5 13l4 4L19 7"></path>
+                                <div class="w-12 h-12 bg-gradient-to-br from-sky-400 to-green-400 rounded-full flex items-center justify-center">
+                                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                     </svg>
                                 </div>
                                 <div>
-                                    <div class="text-2xl font-bold text-gray-800 dark:text-white">5 Tahun</div>
-                                    <div class="text-sm text-gray-600 dark:text-gray-400">Pengalaman</div>
+                                    <div class="text-2xl font-bold text-gray-800 dark:text-white">
+                                        {{ $about->experience_years ?? '5 Tahun' }}
+                                    </div>
+                                    <div class="text-sm text-gray-600 dark:text-gray-400">
+                                        {{ $about->experience_label ?? 'Pengalaman' }}
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <!-- Content Section -->
                 <div class="lg:w-1/2" data-aos="fade-left">
-                    <div
-                        class="inline-block mb-4 px-4 py-2 bg-sky-100 dark:bg-sky-900/30 rounded-full text-sky-700 dark:text-sky-300 text-sm font-semibold">
-                        Tentang Kami
+                    <!-- Badge -->
+                    <div class="inline-block mb-4 px-4 py-2 bg-sky-100 dark:bg-sky-900/30 rounded-full text-sky-700 dark:text-sky-300 text-sm font-semibold">
+                        {{ $about->badge_text ?? 'Tentang Kami' }}
                     </div>
+
+                    <!-- Title -->
                     <h2 class="text-4xl md:text-5xl font-extrabold mb-6">
-                        <span
-                            class="bg-gradient-to-r from-sky-600 to-green-600 dark:from-sky-400 dark:to-green-400 bg-clip-text text-transparent">
-                            Oxerity Corp
+                        <span class="bg-gradient-to-r from-sky-600 to-green-600 dark:from-sky-400 dark:to-green-400 bg-clip-text text-transparent">
+                            {{ $about->title ?? 'Oxerity Corp' }}
                         </span>
                     </h2>
-                    <p class="text-lg text-gray-600 dark:text-gray-400 mb-6">
-                        Oxerity Corp lahir dari semangat untuk melihat UMKM di Indonesia naik kelas. Kami percaya bahwa
-                        teknologi adalah kunci untuk membuka potensi tak terbatas.
-                    </p>
-                    <p class="text-lg text-gray-600 dark:text-gray-400 mb-8">
-                        Misi kami adalah menjadi mitra terpercaya bagi para pelaku UMKM dalam perjalanan transformasi
-                        digital mereka. Dengan tim yang berpengalaman dan solusi yang disesuaikan, kami berkomitmen
-                        untuk memberikan dampak positif yang nyata bagi pertumbuhan ekonomi digital Indonesia.
-                    </p>
+
+                    <!-- Description -->
+                    <div class="text-lg text-gray-600 dark:text-gray-400 mb-8 space-y-6">
+                        {!! nl2br(e($about->description)) !!}
+                    </div>
+
+                    <!-- Features Grid -->
+                    @if($about->features && count($about->features) > 0)
+                    <div class="grid grid-cols-2 gap-6 mb-8">
+                        @foreach($about->features as $feature)
+                        <div class="flex items-start space-x-3">
+                            <div class="w-10 h-10 bg-{{ $feature['color'] ?? 'sky' }}-100 dark:bg-{{ $feature['color'] ?? 'sky' }}-900/30 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <svg class="w-5 h-5 text-{{ $feature['color'] ?? 'sky' }}-600 dark:text-{{ $feature['color'] ?? 'sky' }}-400"
+                                     fill="none"
+                                     stroke="currentColor"
+                                     viewBox="0 0 24 24">
+                                    @if(($feature['icon_type'] ?? 'check-circle') === 'check-circle')
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                              d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    @elseif(($feature['icon_type'] ?? '') === 'lightning-bolt')
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                              d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                    @elseif(($feature['icon_type'] ?? '') === 'star')
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                              d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path>
+                                    @elseif(($feature['icon_type'] ?? '') === 'shield-check')
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                              d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                                    @elseif(($feature['icon_type'] ?? '') === 'user-group')
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                              d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                    @elseif(($feature['icon_type'] ?? '') === 'rocket-launch')
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                              d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"></path>
+                                    @elseif(($feature['icon_type'] ?? '') === 'light-bulb')
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                              d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                                    @elseif(($feature['icon_type'] ?? '') === 'cog')
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                              d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                              d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                    @elseif(($feature['icon_type'] ?? '') === 'chart-bar')
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                              d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                                    @else
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                              d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    @endif
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 dark:text-white mb-1">
+                                    {{ $feature['title'] ?? 'Feature Title' }}
+                                </h4>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">
+                                    {{ $feature['subtitle'] ?? 'Feature description' }}
+                                </p>
+                            </div>
+                        </div>
+                        @endforeach
+                    </div>
+                    @else
+                    <!-- Default Features -->
                     <div class="grid grid-cols-2 gap-6 mb-8">
                         <div class="flex items-start space-x-3">
-                            <div
-                                class="w-10 h-10 bg-sky-100 dark:bg-sky-900/30 rounded-lg flex items-center justify-center flex-shrink-0">
-                                <svg class="w-5 h-5 text-sky-600 dark:text-sky-400" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            <div class="w-10 h-10 bg-sky-100 dark:bg-sky-900/30 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <svg class="w-5 h-5 text-sky-600 dark:text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                 </svg>
                             </div>
                             <div>
@@ -247,12 +314,9 @@
                             </div>
                         </div>
                         <div class="flex items-start space-x-3">
-                            <div
-                                class="w-10 h-10 bg-green-100 dark:bg-green-900/30 rounded-lg flex items-center justify-center flex-shrink-0">
-                                <svg class="w-5 h-5 text-green-600 dark:text-green-400" fill="none"
-                                    stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            <div class="w-10 h-10 bg-green-100 dark:bg-green-900/30 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <svg class="w-5 h-5 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                                 </svg>
                             </div>
                             <div>
@@ -261,141 +325,97 @@
                             </div>
                         </div>
                     </div>
+                    @endif
+
+                    <!-- CTA Button -->
                     <a href="#contact"
-                        class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-sky-500 to-green-500 text-white font-bold rounded-full hover:shadow-xl hover:scale-105 transition-all duration-200">
+                       class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-sky-500 to-green-500 text-white font-bold rounded-full hover:shadow-xl hover:scale-105 transition-all duration-200">
                         Hubungi Kami
-                        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
                         </svg>
                     </a>
                 </div>
             </div>
+            @else
+            <!-- Empty State -->
+            <div class="text-center py-12">
+                <p class="text-gray-500 dark:text-gray-400">About section belum tersedia.</p>
+            </div>
+            @endif
         </div>
     </section>
 
     <!-- Testimonials Section -->
-<!-- Testimonials Section -->
-<section class="py-24 bg-gradient-to-br from-sky-50 to-green-50 dark:from-gray-800 dark:to-gray-900">
-    <div class="container mx-auto px-6">
+    <section class="py-24 bg-gradient-to-br from-sky-50 to-green-50 dark:from-gray-800 dark:to-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-extrabold mb-4">
+                    <span class="bg-gradient-to-r from-sky-600 to-green-600 dark:from-sky-400 dark:to-green-400 bg-clip-text text-transparent">
+                        Kata Mereka
+                    </span>
+                </h2>
+                <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                    Dengar pengalaman dari para pelaku UMKM yang telah bertransformasi bersama kami
+                </p>
+            </div>
 
-        <div class="text-center mb-16" data-aos="fade-up">
-            <h2 class="text-4xl md:text-5xl font-extrabold mb-4">
-                <span class="bg-gradient-to-r from-sky-600 to-green-600 dark:from-sky-400 dark:to-green-400 bg-clip-text text-transparent">
-                    Kata Mereka
-                </span>
-            </h2>
-            <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-                Dengar pengalaman dari para pelaku UMKM yang telah bertransformasi bersama kami
-            </p>
-        </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                @forelse($testimonials as $index => $testimonial)
+                    <!-- Testimonial Card -->
+                    <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl"
+                        data-aos="fade-up"
+                        data-aos-delay="{{ $index * 100 }}">
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            @foreach($testimonials as $i => $t)
-                <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl"
-                     data-aos="fade-up" data-aos-delay="{{ $i * 100 }}">
-
-                    <!-- Stars -->
-                    <div class="flex items-center mb-4">
-                        <div class="flex text-yellow-400">
-                            @for ($s = 1; $s <= $t->rating; $s++)
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M9.049 2.927c.3-.921 1.603-.921
-                                        1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969
-                                        0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0
-                                        00-.364 1.118l1.07 3.292c.3.921-.755
-                                        1.688-1.54 1.118l-2.8-2.034a1 1 0
-                                        00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118
-                                        l1.07-3.292a1 1 0 00-.364-1.118L2.98
-                                        8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1
-                                        0 00.951-.69l1.07-3.292z"/>
-                                </svg>
-                            @endfor
-                        </div>
-                    </div>
-
-                    <!-- Description -->
-                    <p class="text-gray-600 dark:text-gray-400 mb-6 italic">
-                        "{{ $t->message }}"
-                    </p>
-
-                    <!-- Avatar + Name -->
-                    <div class="flex items-center">
-                        <div class="w-12 h-12 rounded-full mr-4
-                            bg-gradient-to-br from-sky-400 to-green-400
-                            flex items-center justify-center
-                            text-white font-bold text-lg leading-none select-none">
-                            <span class="block">{{ chr(65 + $i) }}</span>
-                        </div>
-
-                        <div>
-                            <h4 class="font-bold text-gray-800 dark:text-white">{{ $t->name }}</h4>
-                            <p class="text-sm text-gray-600 dark:text-gray-400">{{ $t->role }}</p>
-                        </div>
-                    </div>
-                </div>
-            @endforeach
-        </div>
-
-
-    </div>
-</section>
-
-
-
-
-
-    <section class="py-20 bg-white dark:bg-gray-900">
-    <div class="container mx-auto px-6">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-
-            @foreach ($testimonials as $t)
-                <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700"
-                     data-aos="fade-up" data-aos-delay="{{ $loop->index * 100 }}">
-
-                    {{-- Bintang 5 --}}
-                    <div class="flex text-yellow-400 mb-4">
-                        @for ($i = 0; $i < $t->rating; $i++)
-                            <svg class="w-6 h-6 fill-current" viewBox="0 0 20 20">
-                                <path
-                                    d="M9 15l-5.878 3.09L5.64 11.545.64 7.41l6.09-.885L10 1l3.27 5.526 6.09.884-5 4.136 1.518 6.545z">
-                                </path>
-                            </svg>
-                        @endfor
-                    </div>
-
-                    {{-- Pesan --}}
-                    <p class="text-gray-700 dark:text-gray-300 text-lg mb-4">
-                        {{ $t->message }}
-                    </p>
-
-                    {{-- Profil --}}
-                    <div class="flex items-center">
-                        {{-- Avatar (jika ada), jika tidak pakai gradient bawaan --}}
-                        @if ($t->avatar)
-                            <img src="{{ asset('storage/' . $t->avatar) }}"
-                                class="w-12 h-12 rounded-full object-cover border-2 border-sky-500" />
-                        @else
-                            <div
-                                class="w-12 h-12 rounded-full bg-gradient-to-r from-sky-500 to-green-500 flex items-center justify-center text-white text-xl font-bold">
-                                {{ strtoupper(substr($t->name, 0, 1)) }}
+                        <!-- Rating Stars -->
+                        <div class="flex items-center mb-4">
+                            <div class="flex text-yellow-400">
+                                @for($i = 1; $i <= 5; $i++)
+                                    <svg class="w-5 h-5" fill="{{ $i <= $testimonial->rating ? 'currentColor' : 'none' }}"
+                                        stroke="{{ $i <= $testimonial->rating ? 'currentColor' : 'currentColor' }}"
+                                        viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                    </svg>
+                                @endfor
                             </div>
-                        @endif
+                        </div>
 
-                        <div class="ml-4">
-                            <h4 class="font-bold text-gray-800 dark:text-white">{{ $t->name }}</h4>
-                            <p class="text-sm text-gray-600 dark:text-gray-400">{{ $t->role }}</p>
+                        <!-- Testimonial Message -->
+                        <p class="text-gray-600 dark:text-gray-400 mb-6 italic">
+                            "{{ $testimonial->message }}"
+                        </p>
+
+                        <!-- User Info -->
+                        <div class="flex items-center">
+                            @if($testimonial->avatar)
+                                <img src="{{ asset('storage/' . $testimonial->avatar) }}"
+                                    alt="{{ $testimonial->name }}"
+                                    class="w-12 h-12 rounded-full object-cover mr-4">
+                            @else
+                                <div class="w-12 h-12 bg-gradient-to-br from-sky-400 to-green-400 rounded-full mr-4 flex items-center justify-center text-white font-bold">
+                                    {{ substr($testimonial->name, 0, 1) }}
+                                </div>
+                            @endif
+
+                            <div>
+                                <h4 class="font-bold text-gray-800 dark:text-white">
+                                    {{ $testimonial->name }}
+                                </h4>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">
+                                    {{ $testimonial->role }}
+                                </p>
+                            </div>
                         </div>
                     </div>
-
-                </div>
-            @endforeach
-
+                @empty
+                    <!-- Empty State -->
+                    <div class="col-span-full text-center py-12">
+                        <p class="text-gray-500 dark:text-gray-400">Belum ada testimonial tersedia.</p>
+                    </div>
+                @endforelse
+            </div>
         </div>
-    </div>
-</section>
-
+    </section>
 
     <!-- Contact Section -->
     <section id="contact" class="py-24 bg-white dark:bg-gray-900">

@@ -6,6 +6,7 @@ use App\Models\HeroSection;
 use App\Models\ServiceSection;
 use App\Models\StatSection;
 use App\Models\TestimonialSection;
+use App\Models\AboutSection;
 
 class HomeController extends Controller
 {
@@ -16,6 +17,7 @@ class HomeController extends Controller
             'services'  => ServiceSection::orderBy('order')->get(),
             'stats'     => StatSection::orderBy('order')->get(),
             'testimonials' => TestimonialSection::orderBy('order')->get(),
+            'about'     => AboutSection::first(),
         ]);
     }
 }
