@@ -5,12 +5,8 @@
             <!-- Company Info -->
             <div>
                 <a href="#"
-                    class="text-2xl font-bold bg-gradient-to-r from-sky-400 to-green-400 bg-clip-text text-transparent flex items-center space-x-2 mb-4">
-                    <svg class="w-8 h-8 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                    </svg>
+                    class="text-2xl font-bold bg-gradient-to-r from-sky-500 to-green-500 bg-clip-text text-transparent flex items-center space-x-2 mb-4">
+                    <img src="{{ asset('images/oxerity_logo.png') }}" alt="Oxerity Logo" class="w-8 h-8 object-contain">
                     <span>Oxerity Corp</span>
                 </a>
                 <p class="text-gray-400 mb-4">
@@ -103,15 +99,5 @@
 </footer>
 
 @push('scripts')
-<script>
-    // Newsletter form handler
-    const newsletterForm = document.querySelector('footer form');
-    if (newsletterForm) {
-        newsletterForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('Terima kasih telah berlangganan newsletter kami!');
-            newsletterForm.reset();
-        });
-    }
-</script>
+    <script src="{{ asset('js/footer.js') }}"></script>
 @endpush
