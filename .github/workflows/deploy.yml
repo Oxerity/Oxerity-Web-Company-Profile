@@ -1,4 +1,4 @@
-name: Auto Deploy Laravel via SSH Password
+name: Auto Deploy Laravel via SSH Key
 
 on:
   push:
@@ -13,25 +13,26 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Deploy via SSH (Password Login)
-        uses: appleboy/ssh-action@v0.1.10
+      - name: Deploy via SSH (Using Private Key)
+        uses: appleboy/ssh-action@v1.2.0
         with:
-          host: ${{ secrets.SSH_HOST }}
-          port: ${{ secrets.SSH_PORT }}
-          username: ${{ secrets.SSH_USERNAME }}
-          password: ${{ secrets.SSH_PASSWORD }}
-          script: |
-            echo "➡️ Start deployment on server..."
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SERVER_SSH_KEY }}
+          port: ${{ secrets.SERVER_PORT }}
 
-            cd ${{ secrets.DEPLOY_PATH }}
-            
+          script: |
+            echo "➡️ Start deployment..."
+
+            cd ${{ secrets.SERVER_PATH }}
+
             echo "➡️ Pulling latest code..."
             git pull origin main
 
             echo "➡️ Installing composer dependencies..."
             composer install --no-interaction --prefer-dist --optimize-autoloader
 
-            echo "➡️ Clearing old optimizations..."
+            echo "➡️ Clearing Laravel cache..."
             php artisan optimize:clear
 
             echo "➡️ Running migrations..."
@@ -42,13 +43,11 @@ jobs:
             php artisan route:cache
             php artisan view:cache
 
-            echo "➡️ Installing npm dependencies..."
-            npm install --no-audit --no-fund
-
             echo "➡️ Building frontend..."
+            npm install --no-audit --no-fund
             npm run build
 
-            echo "➡️ Restart queue workers..."
+            echo "➡️ Restarting queue workers..."
             php artisan queue:restart
 
-            echo "🚀 Deployment success!"
+            echo "🚀 Deployment completed successfully!"
