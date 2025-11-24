@@ -1,0 +1,54 @@
+name: Auto Deploy Laravel via SSH Password
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Deploy via SSH (Password Login)
+        uses: appleboy/ssh-action@v0.1.10
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          port: ${{ secrets.SSH_PORT }}
+          username: ${{ secrets.SSH_USERNAME }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          script: |
+            echo "➡️ Start deployment on server..."
+
+            cd ${{ secrets.DEPLOY_PATH }}
+            
+            echo "➡️ Pulling latest code..."
+            git pull origin main
+
+            echo "➡️ Installing composer dependencies..."
+            composer install --no-interaction --prefer-dist --optimize-autoloader
+
+            echo "➡️ Clearing old optimizations..."
+            php artisan optimize:clear
+
+            echo "➡️ Running migrations..."
+            php artisan migrate --force
+
+            echo "➡️ Rebuilding Laravel cache..."
+            php artisan config:cache
+            php artisan route:cache
+            php artisan view:cache
+
+            echo "➡️ Installing npm dependencies..."
+            npm install --no-audit --no-fund
+
+            echo "➡️ Building frontend..."
+            npm run build
+
+            echo "➡️ Restart queue workers..."
+            php artisan queue:restart
+
+            echo "🚀 Deployment success!"
