@@ -24,10 +24,11 @@ jobs:
           script: |
             echo "➡️ Start deployment..."
 
-            # FIX npm not found
-            export PATH=$PATH:/usr/bin:/usr/local/bin
+            # ===== FIX npm not found (NVM path) =====
             export NVM_DIR="/home/${{ secrets.SERVER_USER }}/.nvm"
             [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+            [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+            nvm use 22
 
             cd ${{ secrets.SERVER_PATH }}
 
