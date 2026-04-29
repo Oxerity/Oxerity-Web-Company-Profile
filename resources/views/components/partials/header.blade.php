@@ -11,7 +11,7 @@
             <span class="hidden lg:inline">Oxerity Corp</span>
         </a>
 
-        <!-- Desktop Menu (Busy & Complex) -->
+        <!-- Desktop Menu -->
         <div class="hidden lg:flex items-center space-x-1 lg:space-x-2">
             <!-- Home -->
             <a href="{{ route('home') }}" class="px-3 py-2 text-sm font-semibold transition-colors hover:text-sky-500 dark:hover:text-sky-400">Home</a>
@@ -81,13 +81,11 @@
                         <span class="text-xs font-bold block text-emerald-600">Corporate & B2B</span>
                         <span class="text-[10px] text-gray-500">Company Profile</span>
                     </a>
-
                 </div>
             </div>
 
             <!-- Pricing -->
             <a href="{{ route('pricing.index') }}" class="px-3 py-2 text-sm font-semibold transition-colors hover:text-sky-500 dark:hover:text-sky-400">Harga</a>
-
 
             <!-- Dropdown: Tentang -->
             <div class="relative group" x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
@@ -100,7 +98,6 @@
                     <a href="{{ route('about.tim-kami') }}" class="block px-4 py-2 text-xs font-medium hover:bg-sky-50 dark:hover:bg-gray-700 rounded-lg">Tim Kami</a>
                     <a href="{{ route('about.karir') }}" class="block px-4 py-2 text-xs font-medium hover:bg-sky-50 dark:hover:bg-gray-700 rounded-lg">Karir</a>
                 </div>
-
             </div>
 
             <!-- Dropdown: Edukasi -->
@@ -114,7 +111,6 @@
                     <a href="{{ route('education.webinar') }}" class="block px-4 py-2 text-xs font-medium hover:bg-sky-50 dark:hover:bg-gray-700 rounded-lg">Webinar UMKM</a>
                     <a href="{{ route('education.ebook') }}" class="block px-4 py-2 text-xs font-medium hover:bg-sky-50 dark:hover:bg-gray-700 rounded-lg">E-Book Gratis</a>
                 </div>
-
             </div>
 
             <!-- Dropdown: Bantuan -->
@@ -128,7 +124,6 @@
                     <a href="{{ route('support.faq') }}" class="block px-4 py-2 text-xs font-medium hover:bg-sky-50 dark:hover:bg-gray-700 rounded-lg">FAQ</a>
                     <a href="{{ route('support.terms') }}" class="block px-4 py-2 text-xs font-medium hover:bg-sky-50 dark:hover:bg-gray-700 rounded-lg">Syarat & Ketentuan</a>
                 </div>
-
             </div>
 
             <!-- Contact -->
@@ -146,7 +141,7 @@
                 Mulai Project
             </a>
             <button class="lg:hidden p-2 rounded-xl bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700" @click="mobileMenuOpen = !mobileMenuOpen">
-                <i :class="mobileMenuOpen ? 'ri-close-line' : 'ri-menu-4-line'" class="text-2xl"></i>
+                <i :class="mobileMenuOpen ? 'ri-close-line' : 'ri-menu-4-line'" class="text-2xl text-gray-700 dark:text-gray-300"></i>
             </button>
         </div>
     </nav>
@@ -156,43 +151,82 @@
         x-transition:enter="transition ease-out duration-300"
         x-transition:enter-start="opacity-0 -translate-y-4"
         x-transition:enter-end="opacity-100 translate-y-0"
-        class="lg:hidden bg-white dark:bg-gray-900 border-t border-gray-100 dark:border-gray-800 max-h-[80vh] overflow-y-auto">
-        <div class="p-4 space-y-2">
-            <a href="#home" class="block p-3 text-sm font-bold hover:bg-sky-50 dark:hover:bg-gray-800 rounded-xl">Home</a>
+        class="lg:hidden bg-white dark:bg-gray-900 border-t border-gray-100 dark:border-gray-800 max-h-[85vh] overflow-y-auto shadow-2xl">
+        <div class="p-6 space-y-3">
+            <a href="{{ route('home') }}" class="block p-4 text-base font-black text-gray-800 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 rounded-2xl transition-all">Home</a>
             
             <!-- Layanan Mobile -->
             <div x-data="{ open: false }">
-                <button @click="open = !open" class="w-full flex items-center justify-between p-3 text-sm font-bold hover:bg-sky-50 dark:hover:bg-gray-800 rounded-xl">
+                <button @click="open = !open" class="w-full flex items-center justify-between p-4 text-base font-black text-gray-800 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 rounded-2xl transition-all">
                     <span>Layanan</span>
-                    <i class="ri-arrow-down-s-line transition-transform" :class="open ? 'rotate-180' : ''"></i>
+                    <i class="ri-arrow-down-s-line transition-transform duration-300" :class="open ? 'rotate-180 text-blue-500' : ''"></i>
                 </button>
-                <div x-show="open" class="pl-6 space-y-1 mt-1">
-                    <a href="#" class="block p-2 text-xs text-gray-600 dark:text-gray-400">Web UMKM</a>
-                    <a href="#" class="block p-2 text-xs text-gray-600 dark:text-gray-400">E-Commerce</a>
-                    <a href="#" class="block p-2 text-xs text-gray-600 dark:text-gray-400">Mobile Apps</a>
+                <div x-show="open" x-transition class="pl-6 space-y-2 mt-2">
+                    <a href="{{ route('services.web-umkm') }}" class="block p-3 text-sm font-bold text-gray-500 hover:text-blue-500 transition-all border-l-2 border-gray-100 dark:border-gray-800 pl-6">Web UMKM</a>
+                    <a href="{{ route('services.e-commerce') }}" class="block p-3 text-sm font-bold text-gray-500 hover:text-blue-500 transition-all border-l-2 border-gray-100 dark:border-gray-800 pl-6">E-Commerce</a>
+                    <a href="{{ route('services.mobile-apps') }}" class="block p-3 text-sm font-bold text-gray-500 hover:text-blue-500 transition-all border-l-2 border-gray-100 dark:border-gray-800 pl-6">Mobile Apps</a>
+                    <a href="{{ route('services.seo-sem') }}" class="block p-3 text-sm font-bold text-gray-500 hover:text-blue-500 transition-all border-l-2 border-gray-100 dark:border-gray-800 pl-6">SEO & SEM</a>
                 </div>
             </div>
 
             <!-- Portfolio Mobile -->
             <div x-data="{ open: false }">
-                <button @click="open = !open" class="w-full flex items-center justify-between p-3 text-sm font-bold hover:bg-sky-50 dark:hover:bg-gray-800 rounded-xl">
+                <button @click="open = !open" class="w-full flex items-center justify-between p-4 text-base font-black text-gray-800 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 rounded-2xl transition-all">
                     <span>Portfolio</span>
-                    <i class="ri-arrow-down-s-line transition-transform" :class="open ? 'rotate-180' : ''"></i>
+                    <i class="ri-arrow-down-s-line transition-transform duration-300" :class="open ? 'rotate-180 text-emerald-500' : ''"></i>
                 </button>
-                <div x-show="open" class="pl-6 space-y-1 mt-1">
-                    <a href="#" class="block p-2 text-xs text-gray-600 dark:text-gray-400">Culinary</a>
-                    <a href="#" class="block p-2 text-xs text-gray-600 dark:text-gray-400">Fashion</a>
-                    <a href="#" class="block p-2 text-xs text-gray-600 dark:text-gray-400">Corporate</a>
+                <div x-show="open" x-transition class="pl-6 space-y-2 mt-2">
+                    <a href="{{ route('portfolio.culinary') }}" class="block p-3 text-sm font-bold text-gray-500 hover:text-emerald-500 transition-all border-l-2 border-gray-100 dark:border-gray-800 pl-6">Culinary & F&B</a>
+                    <a href="{{ route('portfolio.fashion') }}" class="block p-3 text-sm font-bold text-gray-500 hover:text-emerald-500 transition-all border-l-2 border-gray-100 dark:border-gray-800 pl-6">Fashion & Retail</a>
+                    <a href="{{ route('portfolio.corporate') }}" class="block p-3 text-sm font-bold text-gray-500 hover:text-emerald-500 transition-all border-l-2 border-gray-100 dark:border-gray-800 pl-6">Corporate & B2B</a>
                 </div>
             </div>
 
-            <a href="{{ route('pricing.index') }}" class="block p-3 text-sm font-bold hover:bg-sky-50 dark:hover:bg-gray-800 rounded-xl">Harga</a>
+            <a href="{{ route('pricing.index') }}" class="block p-4 text-base font-black text-gray-800 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 rounded-2xl transition-all">Harga</a>
 
-            <a href="#about" class="block p-3 text-sm font-bold hover:bg-sky-50 dark:hover:bg-gray-800 rounded-xl">Tentang</a>
-            <a href="{{ route('contact.index') }}" class="block p-3 text-sm font-bold hover:bg-sky-50 dark:hover:bg-gray-800 rounded-xl">Kontak</a>
+            <!-- Tentang Mobile -->
+            <div x-data="{ open: false }">
+                <button @click="open = !open" class="w-full flex items-center justify-between p-4 text-base font-black text-gray-800 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 rounded-2xl transition-all">
+                    <span>Tentang</span>
+                    <i class="ri-arrow-down-s-line transition-transform duration-300" :class="open ? 'rotate-180 text-purple-500' : ''"></i>
+                </button>
+                <div x-show="open" x-transition class="pl-6 space-y-2 mt-2">
+                    <a href="{{ route('about.visi-misi') }}" class="block p-3 text-sm font-bold text-gray-500 hover:text-purple-500 transition-all border-l-2 border-gray-100 dark:border-gray-800 pl-6">Visi & Misi</a>
+                    <a href="{{ route('about.tim-kami') }}" class="block p-3 text-sm font-bold text-gray-500 hover:text-purple-500 transition-all border-l-2 border-gray-100 dark:border-gray-800 pl-6">Tim Kami</a>
+                    <a href="{{ route('about.karir') }}" class="block p-3 text-sm font-bold text-gray-500 hover:text-purple-500 transition-all border-l-2 border-gray-100 dark:border-gray-800 pl-6">Karir</a>
+                </div>
+            </div>
+
+            <!-- Edukasi Mobile -->
+            <div x-data="{ open: false }">
+                <button @click="open = !open" class="w-full flex items-center justify-between p-4 text-base font-black text-gray-800 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 rounded-2xl transition-all">
+                    <span>Edukasi</span>
+                    <i class="ri-arrow-down-s-line transition-transform duration-300" :class="open ? 'rotate-180 text-amber-500' : ''"></i>
+                </button>
+                <div x-show="open" x-transition class="pl-6 space-y-2 mt-2">
+                    <a href="{{ route('education.blog') }}" class="block p-3 text-sm font-bold text-gray-500 hover:text-amber-500 transition-all border-l-2 border-gray-100 dark:border-gray-800 pl-6">Blog & Artikel</a>
+                    <a href="{{ route('education.webinar') }}" class="block p-3 text-sm font-bold text-gray-500 hover:text-amber-500 transition-all border-l-2 border-gray-100 dark:border-gray-800 pl-6">Webinar UMKM</a>
+                    <a href="{{ route('education.ebook') }}" class="block p-3 text-sm font-bold text-gray-500 hover:text-amber-500 transition-all border-l-2 border-gray-100 dark:border-gray-800 pl-6">E-Book Gratis</a>
+                </div>
+            </div>
+
+            <!-- Bantuan Mobile -->
+            <div x-data="{ open: false }">
+                <button @click="open = !open" class="w-full flex items-center justify-between p-4 text-base font-black text-gray-800 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 rounded-2xl transition-all">
+                    <span>Bantuan</span>
+                    <i class="ri-arrow-down-s-line transition-transform duration-300" :class="open ? 'rotate-180 text-red-500' : ''"></i>
+                </button>
+                <div x-show="open" x-transition class="pl-6 space-y-2 mt-2">
+                    <a href="{{ route('support.help-center') }}" class="block p-3 text-sm font-bold text-gray-500 hover:text-red-500 transition-all border-l-2 border-gray-100 dark:border-gray-800 pl-6">Pusat Bantuan</a>
+                    <a href="{{ route('support.faq') }}" class="block p-3 text-sm font-bold text-gray-500 hover:text-red-500 transition-all border-l-2 border-gray-100 dark:border-gray-800 pl-6">FAQ</a>
+                    <a href="{{ route('support.terms') }}" class="block p-3 text-sm font-bold text-gray-500 hover:text-red-500 transition-all border-l-2 border-gray-100 dark:border-gray-800 pl-6">Syarat & Ketentuan</a>
+                </div>
+            </div>
+
+            <a href="{{ route('contact.index') }}" class="block p-4 text-base font-black text-gray-800 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 rounded-2xl transition-all">Kontak</a>
             
-            <div class="pt-4 border-t border-gray-100 dark:border-gray-800">
-                <a href="{{ route('contact.index') }}" class="flex items-center justify-center w-full px-5 py-3 text-sm font-bold text-white bg-gradient-to-r from-sky-500 to-indigo-600 rounded-xl">
+            <div class="pt-6 border-t border-gray-100 dark:border-gray-800">
+                <a href="{{ route('contact.index') }}" class="flex items-center justify-center w-full px-6 py-4 text-base font-black text-white bg-gradient-to-r from-sky-500 to-indigo-600 rounded-2xl shadow-xl shadow-sky-500/20 active:scale-95 transition-all">
                     Mulai Project Sekarang
                 </a>
             </div>

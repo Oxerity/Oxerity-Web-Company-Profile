@@ -1,7 +1,7 @@
 <x-layouts.app>
 
     <!-- Hero Section with Animated Gradient -->
-    <section id="home" class="relative min-h-screen flex items-center overflow-hidden">
+    <section id="home" class="relative min-h-screen flex items-center pt-32 lg:pt-0 overflow-hidden">
         <!-- Animated Background -->
         <div
             class="absolute inset-0 bg-gradient-to-br from-cyan-50 via-purple-50 to-fuchsia-50 dark:from-gray-800 dark:via-gray-900 dark:to-gray-800">
