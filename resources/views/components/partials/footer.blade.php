@@ -1,103 +1,145 @@
 <!-- Footer -->
-<footer class="bg-gray-900 dark:bg-black text-gray-300 pt-16 pb-8">
-    <div class="container mx-auto px-6">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-            <!-- Company Info -->
-            <div>
-                <a href="#"
-                    class="text-2xl font-bold bg-gradient-to-r from-sky-500 to-green-500 bg-clip-text text-transparent flex items-center space-x-2 mb-4">
-                    <img src="{{ asset('images/oxerity_logo.png') }}" alt="Oxerity Logo" class="w-8 h-8 object-contain">
-                    <span>Oxerity Corp</span>
+<footer class="bg-white dark:bg-[#050505] text-gray-600 dark:text-gray-400 pt-24 pb-12 overflow-hidden relative border-t border-gray-100 dark:border-white/5" x-data="{ activeModal: null }">
+    <!-- Decorative Background -->
+    <div class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-blue-600/5 rounded-full blur-[120px] pointer-events-none"></div>
+    <div class="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-emerald-600/5 rounded-full blur-[120px] pointer-events-none"></div>
+
+    <div class="container mx-auto px-6 relative z-10">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20">
+            <!-- Column 1: Brand Info -->
+            <div class="space-y-8">
+                <a href="{{ route('home') }}" class="inline-flex items-center gap-3 group">
+                    <img src="{{ asset('images/oxerity_logo.png') }}" alt="Oxerity" class="w-12 h-12 object-contain group-hover:scale-110 transition-transform duration-500">
+                    <span class="text-2xl font-black text-gray-900 dark:text-white tracking-tighter">Oxerity<span class="text-blue-600 dark:text-blue-500">Corp</span></span>
                 </a>
-                <p class="text-gray-400 mb-4">
-                    Membantu UMKM Indonesia bertransformasi digital dengan solusi teknologi yang inovatif dan
-                    terjangkau.
+                <p class="text-base leading-relaxed max-w-xs">
+                    Partner strategis transformasi digital UMKM Indonesia. Menghadirkan solusi teknologi yang berdampak nyata dan berkelanjutan.
                 </p>
-                <div class="flex space-x-3">
-                    <a href="#"
-                        class="w-10 h-10 bg-gray-800 hover:bg-gradient-to-br hover:from-sky-400 hover:to-green-400 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                            <path
-                                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-                        </svg>
+                <div class="flex items-center gap-4">
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 flex items-center justify-center text-gray-600 dark:text-white hover:bg-blue-600 hover:text-white transition-all duration-300">
+                        <i class="ri-facebook-fill text-lg"></i>
                     </a>
-                    <a href="#"
-                        class="w-10 h-10 bg-gray-800 hover:bg-gradient-to-br hover:from-sky-400 hover:to-green-400 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                            <path
-                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                        </svg>
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 flex items-center justify-center text-gray-600 dark:text-white hover:bg-gradient-to-tr hover:from-purple-500 hover:to-pink-500 hover:text-white transition-all duration-300">
+                        <i class="ri-instagram-line text-lg"></i>
                     </a>
-                    <a href="#"
-                        class="w-10 h-10 bg-gray-800 hover:bg-gradient-to-br hover:from-sky-400 hover:to-green-400 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                            <path
-                                d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
-                        </svg>
-                    </a>
-                    <a href="#"
-                        class="w-10 h-10 bg-gray-800 hover:bg-gradient-to-br hover:from-sky-400 hover:to-green-400 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                            <path
-                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                        </svg>
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 flex items-center justify-center text-gray-600 dark:text-white hover:bg-black hover:text-white transition-all duration-300">
+                        <i class="ri-twitter-x-fill text-lg"></i>
                     </a>
                 </div>
             </div>
 
-            <!-- Quick Links -->
+            <!-- Column 2: Layanan -->
             <div>
-                <h3 class="text-white font-bold text-lg mb-4">Quick Links</h3>
-                <ul class="space-y-2">
-                    <li><a href="#home" class="hover:text-sky-400 transition-colors">Home</a></li>
-                    <li><a href="#services" class="hover:text-sky-400 transition-colors">Services</a></li>
-                    <li><a href="#about" class="hover:text-sky-400 transition-colors">About Us</a></li>
-                    <li><a href="#contact" class="hover:text-sky-400 transition-colors">Contact</a></li>
+                <h4 class="text-gray-900 dark:text-white font-black text-sm uppercase tracking-[0.2em] mb-8">Layanan</h4>
+                <ul class="space-y-4 text-sm font-medium">
+                    <li><a href="{{ route('services.web-umkm') }}" class="hover:text-blue-600 dark:hover:text-blue-500 transition-colors">Web Development</a></li>
+                    <li><a href="{{ route('services.e-commerce') }}" class="hover:text-blue-600 dark:hover:text-blue-500 transition-colors">E-Commerce</a></li>
+                    <li><a href="{{ route('services.mobile-apps') }}" class="hover:text-blue-600 dark:hover:text-blue-500 transition-colors">Mobile Apps</a></li>
+                    <li><a href="{{ route('services.seo-sem') }}" class="hover:text-blue-600 dark:hover:text-blue-500 transition-colors">SEO & Ads Strategy</a></li>
                 </ul>
             </div>
 
-            <!-- Services -->
+            <!-- Column 3: Navigasi -->
             <div>
-                <h3 class="text-white font-bold text-lg mb-4">Layanan</h3>
-                <ul class="space-y-2">
-                    <li><a href="#" class="hover:text-sky-400 transition-colors">Digitalisasi UMKM</a></li>
-                    <li><a href="#" class="hover:text-sky-400 transition-colors">Pemberdayaan Digital</a></li>
-                    <li><a href="#" class="hover:text-sky-400 transition-colors">Analitik & Strategi</a></li>
-                    <li><a href="#" class="hover:text-sky-400 transition-colors">Konsultasi Bisnis</a></li>
+                <h4 class="text-gray-900 dark:text-white font-black text-sm uppercase tracking-[0.2em] mb-8">Navigasi</h4>
+                <ul class="space-y-4 text-sm font-medium">
+                    <li><a href="{{ route('about.visi-misi') }}" class="hover:text-emerald-600 dark:hover:text-emerald-500 transition-colors">Tentang Kami</a></li>
+                    <li><a href="{{ route('about.karir') }}" class="hover:text-emerald-600 dark:hover:text-emerald-500 transition-colors">Karir & Lowongan</a></li>
+                    <li><a href="{{ route('portfolio.culinary') }}" class="hover:text-emerald-600 dark:hover:text-emerald-500 transition-colors">Portfolio</a></li>
+                    <li><a href="{{ route('pricing.index') }}" class="hover:text-emerald-600 dark:hover:text-emerald-500 transition-colors">Paket Harga</a></li>
+                    <li><a href="{{ route('contact.index') }}" class="hover:text-emerald-600 dark:hover:text-emerald-500 transition-colors">Hubungi Kami</a></li>
                 </ul>
             </div>
 
-            <!-- Newsletter -->
+            <!-- Column 4: Maps -->
             <div>
-                <h3 class="text-white font-bold text-lg mb-4">Newsletter</h3>
-                <p class="text-gray-400 mb-4">Dapatkan update terbaru tentang digital transformation</p>
-                <form class="space-y-2">
-                    <input type="email" placeholder="Email Anda"
-                        class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 text-white">
-                    <button type="submit"
-                        class="w-full px-4 py-2 bg-gradient-to-r from-sky-500 to-green-500 text-white font-bold rounded-lg hover:shadow-xl transition-all duration-300">
-                        Subscribe
-                    </button>
-                </form>
+                <h4 class="text-gray-900 dark:text-white font-black text-sm uppercase tracking-[0.2em] mb-8">Lokasi Kantor</h4>
+                <div class="relative group rounded-3xl overflow-hidden border border-gray-100 dark:border-white/10 bg-gray-50 dark:bg-white/5 p-2 transition-all hover:border-blue-500/50">
+                    <div class="h-32 w-full rounded-2xl overflow-hidden relative">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126514.80931238474!2d110.31681285!3d-7.7272832!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a59074092497f%3A0x6331a98074d9e798!2sSleman%2C%20Kabupaten%20Sleman%2C%20Daerah%20Istimewa%20Yogyakarta!5e0!3m2!1sid!2sid!4v1714370000000!5m2!1sid!2sid" 
+                            class="w-full h-full border-0" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                    <div class="mt-4 px-2 pb-2 text-sm">
+                        <p class="text-xs leading-relaxed text-gray-500 mb-2">
+                            Jl. Kaliurang KM 5, No. 123, Sleman, DI Yogyakarta, 55281
+                        </p>
+                        <a href="https://goo.gl/maps/example" target="_blank" class="text-[10px] font-black text-blue-600 dark:text-blue-500 uppercase tracking-widest inline-block hover:underline">Google Maps <i class="ri-external-link-line"></i></a>
+                    </div>
+                </div>
             </div>
         </div>
 
+        <!-- Bottom Divider -->
+        <div class="h-px w-full bg-gradient-to-r from-transparent via-gray-200 dark:via-white/10 to-transparent mb-12"></div>
+
         <!-- Bottom Footer -->
-        <div class="border-t border-gray-800 pt-8">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-400 text-sm mb-4 md:mb-0">
-                    &copy; 2025 Oxerity Corp. All rights reserved.
-                </p>
-                <div class="flex space-x-6 text-sm">
-                    <a href="#" class="text-gray-400 hover:text-sky-400 transition-colors">Privacy Policy</a>
-                    <a href="#" class="text-gray-400 hover:text-sky-400 transition-colors">Terms of Service</a>
-                    <a href="#" class="text-gray-400 hover:text-sky-400 transition-colors">Cookie Policy</a>
-                </div>
+        <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="text-[13px]">
+                <p>&copy; 2026 <span class="text-gray-900 dark:text-white font-bold tracking-tight">Oxerity Corp.</span> All rights reserved.</p>
+            </div>
+            <div class="flex flex-wrap justify-center gap-x-8 gap-y-4 text-[11px] font-black uppercase tracking-[0.2em] text-gray-400 dark:text-gray-500">
+                <a href="#" @click.prevent="activeModal = 'privacy'" class="hover:text-gray-900 dark:hover:text-white transition-colors cursor-pointer">Privacy Policy</a>
+                <a href="#" @click.prevent="activeModal = 'terms'" class="hover:text-gray-900 dark:hover:text-white transition-colors cursor-pointer">Terms of Service</a>
+                <a href="#" @click.prevent="activeModal = 'cookie'" class="hover:text-gray-900 dark:hover:text-white transition-colors cursor-pointer">Cookie Policy</a>
             </div>
         </div>
     </div>
-</footer>
 
-@push('scripts')
-    <script src="{{ asset('js/footer.js') }}"></script>
-@endpush
+    <!-- Modals (Simplified Logic to Prevent Flickering) -->
+    <template x-teleport="body">
+        <div x-show="activeModal !== null" 
+             class="fixed inset-0 z-[10000] flex items-center justify-center p-6 bg-black/60 backdrop-blur-md" 
+             x-transition:enter="transition ease-out duration-300"
+             x-transition:enter-start="opacity-0"
+             x-transition:enter-end="opacity-100"
+             x-transition:leave="transition ease-in duration-300"
+             x-transition:leave-start="opacity-100"
+             x-transition:leave-end="opacity-0"
+             x-cloak>
+            
+            <div @click.away="activeModal = null" 
+                 class="bg-white dark:bg-[#0f0f0f] border border-gray-100 dark:border-white/10 rounded-[3rem] w-full max-w-3xl max-h-[85vh] overflow-hidden shadow-2xl flex flex-col"
+                 x-transition:enter="transition ease-out duration-500"
+                 x-transition:enter-start="opacity-0 scale-95 translate-y-8"
+                 x-transition:enter-end="opacity-100 scale-100 translate-y-0">
+                
+                <!-- Modal Header -->
+                <div class="px-10 py-6 border-b border-gray-100 dark:border-white/5 flex justify-between items-center bg-gray-50 dark:bg-white/5">
+                    <h3 class="text-xl font-black text-gray-900 dark:text-white uppercase tracking-tighter">
+                        <template x-if="activeModal === 'privacy'"><span>Privacy Policy</span></template>
+                        <template x-if="activeModal === 'terms'"><span>Terms of Service</span></template>
+                        <template x-if="activeModal === 'cookie'"><span>Cookie Policy</span></template>
+                    </h3>
+                    <button @click="activeModal = null" class="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-800 flex items-center justify-center text-gray-900 dark:text-white hover:bg-red-500 hover:text-white transition-all">
+                        <i class="ri-close-line text-2xl"></i>
+                    </button>
+                </div>
+
+                <!-- Modal Body -->
+                <div class="p-10 overflow-y-auto text-gray-600 dark:text-gray-400 leading-relaxed text-base space-y-6">
+                    <div x-show="activeModal === 'privacy'" x-transition>
+                        <p>Oxerity Corp berkomitmen penuh untuk menjaga kerahasiaan data pribadi Anda. Seluruh informasi yang kami kumpulkan hanya akan digunakan untuk meningkatkan kualitas layanan kami kepada Anda.</p>
+                        <p class="mt-4">Kami tidak akan pernah menjual atau membagikan data Anda kepada pihak ketiga tanpa persetujuan eksplisit dari Anda.</p>
+                    </div>
+                    <div x-show="activeModal === 'terms'" x-transition>
+                        <p>Dengan menggunakan layanan Oxerity Corp, Anda menyetujui seluruh ketentuan yang berlaku mengenai proses pengerjaan, pembayaran, dan hak kekayaan intelektual sesuai dengan kontrak yang disepakati.</p>
+                        <p class="mt-4">Kami berhak untuk mengubah syarat ini sewaktu-waktu dengan memberikan pemberitahuan melalui website resmi kami.</p>
+                    </div>
+                    <div x-show="activeModal === 'cookie'" x-transition>
+                        <p>Website kami menggunakan cookie untuk mengoptimalkan pengalaman navigasi Anda. Cookie membantu kami mengenali preferensi Anda dan mempersonalisasi konten yang kami sajikan.</p>
+                        <p class="mt-4">Anda dapat menonaktifkan cookie melalui pengaturan browser Anda, namun beberapa fitur website mungkin tidak akan berfungsi secara maksimal.</p>
+                    </div>
+                </div>
+
+                <!-- Modal Footer -->
+                <div class="px-10 py-6 border-t border-gray-100 dark:border-white/5 bg-gray-50 dark:bg-white/5 flex justify-end">
+                    <button @click="activeModal = null" class="px-8 py-3 bg-gray-900 dark:bg-white text-white dark:text-black rounded-xl font-black text-sm uppercase hover:scale-105 transition-transform">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </template>
+</footer>

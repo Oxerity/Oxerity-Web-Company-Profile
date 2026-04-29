@@ -240,6 +240,91 @@
         </div>
     </section>
 
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-24 bg-gray-50 dark:bg-gray-800/50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-extrabold mb-4">
+                    <span class="bg-gradient-to-r from-sky-600 to-indigo-600 dark:from-sky-400 dark:to-indigo-400 bg-clip-text text-transparent">
+                        Pilihan Paket Hemat
+                    </span>
+                </h2>
+                <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                    Investasi digital terbaik untuk pertumbuhan bisnis UMKM Anda
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Starter -->
+                <div class="bg-white dark:bg-gray-900 rounded-3xl p-8 shadow-xl border border-gray-100 dark:border-gray-700 hover:scale-105 transition-transform duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="text-xl font-bold mb-4">Paket Starter</h3>
+                    <div class="mb-6">
+                        <span class="text-4xl font-extrabold">Rp 1.5jt</span>
+                        <span class="text-gray-500 text-sm">/proyek</span>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center text-sm text-gray-600 dark:text-gray-400">
+                            <i class="ri-check-line text-green-500 mr-2 font-bold"></i> Website Profil 3 Halaman
+                        </li>
+                        <li class="flex items-center text-sm text-gray-600 dark:text-gray-400">
+                            <i class="ri-check-line text-green-500 mr-2 font-bold"></i> Domain .com (1 Thn)
+                        </li>
+                        <li class="flex items-center text-sm text-gray-600 dark:text-gray-400">
+                            <i class="ri-check-line text-green-500 mr-2 font-bold"></i> SSL Sertifikat Gratis
+                        </li>
+                    </ul>
+                    <a href="#" class="block text-center py-3 px-6 rounded-xl border-2 border-sky-500 text-sky-500 font-bold hover:bg-sky-500 hover:text-white transition-all">Pilih Paket</a>
+                </div>
+
+                <!-- Business -->
+                <div class="bg-gradient-to-b from-sky-500 to-indigo-600 rounded-3xl p-8 shadow-2xl text-white transform scale-110 relative z-10" data-aos="fade-up" data-aos-delay="200">
+                    <div class="absolute top-0 right-8 transform -translate-y-1/2 bg-amber-400 text-gray-900 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Terpopuler</div>
+                    <h3 class="text-xl font-bold mb-4">Paket Bisnis</h3>
+                    <div class="mb-6">
+                        <span class="text-4xl font-extrabold">Rp 3.5jt</span>
+                        <span class="opacity-80 text-sm">/proyek</span>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center text-sm">
+                            <i class="ri-check-line mr-2 font-bold"></i> Website Profil Unlimited
+                        </li>
+                        <li class="flex items-center text-sm">
+                            <i class="ri-check-line mr-2 font-bold"></i> Fitur Katalog Produk
+                        </li>
+                        <li class="flex items-center text-sm">
+                            <i class="ri-check-line mr-2 font-bold"></i> Integrasi WhatsApp Chat
+                        </li>
+                        <li class="flex items-center text-sm">
+                            <i class="ri-check-line mr-2 font-bold"></i> Optimasi SEO Dasar
+                        </li>
+                    </ul>
+                    <a href="#" class="block text-center py-3 px-6 rounded-xl bg-white text-sky-600 font-bold hover:shadow-lg transition-all">Pilih Paket</a>
+                </div>
+
+                <!-- Premium -->
+                <div class="bg-white dark:bg-gray-900 rounded-3xl p-8 shadow-xl border border-gray-100 dark:border-gray-700 hover:scale-105 transition-transform duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <h3 class="text-xl font-bold mb-4">Paket Premium</h3>
+                    <div class="mb-6">
+                        <span class="text-4xl font-extrabold">Rp 7.5jt</span>
+                        <span class="text-gray-500 text-sm">/proyek</span>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center text-sm text-gray-600 dark:text-gray-400">
+                            <i class="ri-check-line text-green-500 mr-2 font-bold"></i> E-Commerce / Custom App
+                        </li>
+                        <li class="flex items-center text-sm text-gray-600 dark:text-gray-400">
+                            <i class="ri-check-line text-green-500 mr-2 font-bold"></i> Payment Gateway
+                        </li>
+                        <li class="flex items-center text-sm text-gray-600 dark:text-gray-400">
+                            <i class="ri-check-line text-green-500 mr-2 font-bold"></i> Dashboard Admin Custom
+                        </li>
+                    </ul>
+                    <a href="#" class="block text-center py-3 px-6 rounded-xl border-2 border-sky-500 text-sky-500 font-bold hover:bg-sky-500 hover:text-white transition-all">Pilih Paket</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- About Section -->
     <section id="about" class="py-24 bg-white dark:bg-gray-900">
         <div class="container mx-auto px-6">
@@ -314,11 +399,82 @@
                         Hubungi Kami
                         <i class="ri-arrow-right-line text-xl ml-2"></i>
                     </a>
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-                        </svg>
-                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Workflow Section -->
+    <section class="py-24 bg-white dark:bg-gray-900 relative overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-20" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-extrabold mb-4">
+                    <span class="bg-gradient-to-r from-emerald-600 to-sky-600 dark:from-emerald-400 dark:to-sky-400 bg-clip-text text-transparent">
+                        Alur Kerja Kami
+                    </span>
+                </h2>
+                <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                    Proses transparan dan terstruktur untuk hasil yang maksimal
+                </p>
+            </div>
+
+            <div class="relative">
+                <style>
+                    @keyframes flowLine {
+                        0% { background-position: 100% 0; }
+                        100% { background-position: -100% 0; }
+                    }
+                    .animate-flow-line {
+                        background-size: 200% 100%;
+                        animation: flowLine 3s linear infinite;
+                    }
+                </style>
+                <!-- Connecting Line (Centered with Icons + Animated) -->
+                <div class="hidden lg:block absolute top-10 left-[10%] w-[80%] h-1 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+                    <div class="w-full h-full bg-gradient-to-r from-transparent via-sky-500 to-transparent animate-flow-line opacity-75"></div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                    <!-- Step 1 -->
+                    <div class="relative group" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="w-20 h-20 bg-white dark:bg-gray-800 rounded-2xl shadow-xl border-2 border-sky-500 flex items-center justify-center mx-auto mb-6 relative z-10 group-hover:rotate-6 transition-transform">
+                            <i class="ri-chat-voice-line text-3xl text-sky-500"></i>
+                        </div>
+                        <div class="text-center">
+                            <h4 class="text-xl font-bold mb-2">1. Konsultasi</h4>
+                            <p class="text-sm text-gray-500">Diskusi kebutuhan & target bisnis Anda secara mendalam.</p>
+                        </div>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="relative group" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="w-20 h-20 bg-white dark:bg-gray-800 rounded-2xl shadow-xl border-2 border-purple-500 flex items-center justify-center mx-auto mb-6 relative z-10 group-hover:rotate-6 transition-transform">
+                            <i class="ri-palette-line text-3xl text-purple-500"></i>
+                        </div>
+                        <div class="text-center">
+                            <h4 class="text-xl font-bold mb-2">2. Desain UI/UX</h4>
+                            <p class="text-sm text-gray-500">Pembuatan mockup desain yang modern dan user-friendly.</p>
+                        </div>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="relative group" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="w-20 h-20 bg-white dark:bg-gray-800 rounded-2xl shadow-xl border-2 border-emerald-500 flex items-center justify-center mx-auto mb-6 relative z-10 group-hover:rotate-6 transition-transform">
+                            <i class="ri-code-s-slash-line text-3xl text-emerald-500"></i>
+                        </div>
+                        <div class="text-center">
+                            <h4 class="text-xl font-bold mb-2">3. Development</h4>
+                            <p class="text-sm text-gray-500">Proses koding menggunakan teknologi terkini & performa tinggi.</p>
+                        </div>
+                    </div>
+                    <!-- Step 4 -->
+                    <div class="relative group" data-aos="zoom-in" data-aos-delay="400">
+                        <div class="w-20 h-20 bg-white dark:bg-gray-800 rounded-2xl shadow-xl border-2 border-amber-500 flex items-center justify-center mx-auto mb-6 relative z-10 group-hover:rotate-6 transition-transform">
+                            <i class="ri-rocket-2-line text-3xl text-amber-500"></i>
+                        </div>
+                        <div class="text-center">
+                            <h4 class="text-xl font-bold mb-2">4. Launch & Support</h4>
+                            <p class="text-sm text-gray-500">Website online dan pendampingan maintenance rutin.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
